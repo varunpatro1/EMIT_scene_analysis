@@ -42,4 +42,6 @@ def elev_zen_variance_plt(df):
     df.plot.scatter(x="lat", y="lon", s = 8, c=df['elev med'], colormap="plasma", title= title_elev, ax=ax[0])
     df.plot.scatter(x="lat", y="lon", s = 8, c=df['zen'], colormap="plasma", title= title_zen, ax=ax[1])
 
+
+
     
