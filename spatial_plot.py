@@ -28,9 +28,9 @@ def metric_variance_plt(df, metric):
         df.plot.scatter(x="lat", y="lon", s = 5, c=df[df_metric], colormap="plasma", title= title, ax=ax[i])
 
 
-def elev_zen_variance_plt(df):
-    title_elev = 'Global Map of Elevation Variance'
-    title_zen = 'Global Map of Zenith Angle Variance'
+def elev_zen_variance_plt(df, sampling_factors):
+    title_elev = 'Global Map of Elevation Variance based on' + sampling_factors
+    title_zen = 'Global Map of Zenith Angle Variance based on' + sampling_factors
     fig, ax = plt.subplots(figsize=(20,16), ncols = 1, nrows = 2, gridspec_kw = None)
     countries = gpd.read_file(  
     gpd.datasets.get_path("naturalearth_lowres"))
@@ -41,6 +41,20 @@ def elev_zen_variance_plt(df):
     # plot points
     df.plot.scatter(x="lat", y="lon", s = 8, c=df['elev med'], colormap="plasma", title= title_elev, ax=ax[0])
     df.plot.scatter(x="lat", y="lon", s = 8, c=df['zen'], colormap="plasma", title= title_zen, ax=ax[1])
+
+def wv_range_med_variance_plt(df, sampling_factors):
+    title_elev = 'Global Map of Water Vapor Range Variance based on' + sampling_factors
+    title_zen = 'Global Map of Water Vapor Median Variance based on' + sampling_factors
+    fig, ax = plt.subplots(figsize=(20,16), ncols = 1, nrows = 2, gridspec_kw = None)
+    countries = gpd.read_file(  
+    gpd.datasets.get_path("naturalearth_lowres"))
+
+    for i in range(2):
+        countries.plot(color="lightblue", ax = ax[i])
+        
+    # plot points
+    df.plot.scatter(x="lat", y="lon", s = 8, c=df['wv range'], colormap="plasma", title= title_elev, ax=ax[0])
+    df.plot.scatter(x="lat", y="lon", s = 8, c=df['wv med'], colormap="plasma", title= title_zen, ax=ax[1])
 
 
 
