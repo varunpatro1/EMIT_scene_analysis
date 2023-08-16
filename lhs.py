@@ -38,13 +38,13 @@ def LatinHypercubeSample2(df): # sza and wv range
     wv = df['wv range']
     sza = df['zen']
     
-    bins = 35
+    bins = 16
     # building intervals
     wv_range = np.linspace(np.min(wv),np.max(wv), bins)
     sza_range = np.linspace(np.min(sza),np.max(sza), bins)
     
     
-    samples_per_space = 1
+    samples_per_space = 3
     print(f'num samples to build: {(bins-1)**2*samples_per_space}')
     
     sample_set = []
