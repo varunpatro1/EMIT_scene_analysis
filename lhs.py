@@ -8,14 +8,14 @@ def LatinHypercubeSample(df): # elevation, sza and wv range
     elev = df['elev med']
     sza = df['zen']
     
-    bins = 11
+    bins = 9
     # building intervals
     wv_range = np.linspace(np.min(wv),np.max(wv), bins)
     e_range = np.linspace(np.min(elev),np.max(elev), bins)
     sza_range = np.linspace(np.min(sza),np.max(sza), bins)
     
     
-    samples_per_space = 1
+    samples_per_space = 2
     print(f'num samples to build: {(bins-1)**3*samples_per_space}')
     
     sample_set = []
@@ -38,7 +38,7 @@ def LatinHypercubeSample2(df): # sza and wv range
     wv = df['wv range']
     sza = df['zen']
     
-    bins = 16
+    bins = 19
     # building intervals
     wv_range = np.linspace(np.min(wv),np.max(wv), bins)
     sza_range = np.linspace(np.min(sza),np.max(sza), bins)
@@ -66,13 +66,13 @@ def LatinHypercubeSample3(df): # elevation and sza
     elev = df['elev med']
     sza = df['zen']
     
-    bins = 31
+    bins = 19
     # building intervals
     e_range = np.linspace(np.min(elev),np.max(elev), bins)
     sza_range = np.linspace(np.min(sza),np.max(sza), bins)
     
     
-    samples_per_space = 1
+    samples_per_space = 3
     print(f'num samples to build: {(bins-1)**2*samples_per_space}')
     
     sample_set = []
@@ -94,14 +94,14 @@ def LatinHypercubeSample4(df): # slope, sza and wv range
     slope = df['slope']
     sza = df['zen']
     
-    bins = 11
+    bins = 9
     # building intervals
     wv_range = np.linspace(np.min(wv),np.max(wv), bins)
     sl_range = np.linspace(np.min(slope),np.max(slope), bins)
     sza_range = np.linspace(np.min(sza),np.max(sza), bins)
     
     
-    samples_per_space = 1
+    samples_per_space = 2
     print(f'num samples to build: {(bins-1)**3*samples_per_space}')
     
     sample_set = []
