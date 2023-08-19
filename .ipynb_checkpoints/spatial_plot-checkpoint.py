@@ -29,8 +29,13 @@ def metric_variance_plt(df, metric):
 
 
 def elev_zen_variance_plt(df, sampling_factors):
-    title_elev = 'Global Map of Elevation Variance based on' + sampling_factors
-    title_zen = 'Global Map of Zenith Angle Variance based on' + sampling_factors
+    #title_elev = 'Global Map of Elevation Variance based on' + sampling_factors
+    #title_zen = 'Global Map of Zenith Angle Variance based on' + sampling_factors
+
+    title_elev = 'Elevation Variance post Cloud Filtration based on' + sampling_factors
+    title_zen = 'Zenith Angle Variance post Cloud Filtration based on' + sampling_factors
+
+    
     fig, ax = plt.subplots(figsize=(20,16), ncols = 1, nrows = 2, gridspec_kw = None)
     countries = gpd.read_file(  
     gpd.datasets.get_path("naturalearth_lowres"))
