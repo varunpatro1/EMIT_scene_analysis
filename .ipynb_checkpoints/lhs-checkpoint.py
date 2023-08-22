@@ -31,20 +31,20 @@ def LatinHypercubeSample(df): # elevation, sza and wv range
 
     return sample_set
 
-def LatinHypercubeSample2(df): # sza and wv range
+def LatinHypercubeSample_wvr_sza(df, num_bins, num_samples_per_space): # sza and wv range
     
     np.random.seed(13)
     
     wv = df['wv range']
     sza = df['zen']
     
-    bins = 19
+    bins = num_bins
     # building intervals
     wv_range = np.linspace(np.min(wv),np.max(wv), bins)
     sza_range = np.linspace(np.min(sza),np.max(sza), bins)
     
     
-    samples_per_space = 3
+    samples_per_space = num_samples_per_space
     print(f'num samples to build: {(bins-1)**2*samples_per_space}')
     
     sample_set = []
