@@ -45,7 +45,7 @@ def LatinHypercubeSample_wvr_sza(df, num_bins, num_samples_per_space): # sza and
     
     
     samples_per_space = num_samples_per_space
-    print(f'num samples to build: {(bins-1)**2*samples_per_space}')
+    #print(f'num samples to build: {(bins-1)**2*samples_per_space}')
     
     sample_set = []
     for _w in range(len(wv_range) - 1):
