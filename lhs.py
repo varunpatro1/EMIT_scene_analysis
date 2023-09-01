@@ -66,13 +66,13 @@ def LatinHypercubeSample3(df): # elevation and sza
     elev = df['elev med']
     sza = df['zen']
     
-    bins = 19
+    bins = 7
     # building intervals
     e_range = np.linspace(np.min(elev),np.max(elev), bins)
     sza_range = np.linspace(np.min(sza),np.max(sza), bins)
     
     
-    samples_per_space = 3
+    samples_per_space = 1
     print(f'num samples to build: {(bins-1)**2*samples_per_space}')
     
     sample_set = []
